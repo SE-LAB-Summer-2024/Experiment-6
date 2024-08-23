@@ -367,6 +367,9 @@ public class CodeGenerator {
     }
 
     private Pair<Pair<Address, Address>, Address> getAddresses() {
+        Assert.checkNonNull(ss);
+        Assert.checkNonNull(memory);
+
         Address s2 = ss.pop();
         Address s1 = ss.pop();
         memory.addTempSize();

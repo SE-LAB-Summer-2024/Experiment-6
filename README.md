@@ -110,11 +110,15 @@ Integer --> <INTEGER_LITERAL>
 قرمز بودن Imidiate به خاطر گیتهاب است
 
 
-
+#### Extract Repeated Pattern
 ![img.png](images/BadSmellEqual.png)
 ![img.png](images/BadSmellAndLDNot.png)
 
 ![img.png](images/RefactoredGetAddresses.png)
+
+#### Add Assertion
+
+![img.png](images/AddAssertion.png)
 
 
 ## سوالات 
