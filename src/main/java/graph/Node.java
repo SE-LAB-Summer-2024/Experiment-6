@@ -15,8 +15,10 @@ public class Node implements Comparable<Node> {
     private boolean visited;
     @Setter
     private int distance;
+    private String name;
 
-    public Node() {
+    public Node(String name) {
+        this.name = name;
         edges = new ArrayList<>();
     }
 
@@ -43,4 +45,10 @@ public class Node implements Comparable<Node> {
     public int compareTo(Node o) {
         return o.hashCode() - hashCode();
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
+
 }
