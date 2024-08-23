@@ -1,6 +1,7 @@
 package graph;
 
 import graph.state.TransportationSystem;
+import graph.strategy.BusStrategy;
 import graph.strategy.TrainStrategy;
 import graph.strategy.TransportationStrategy;
 import org.junit.Assert;
@@ -15,12 +16,14 @@ public class StrategyTest {
     private Node cityA;
     private Node cityB;
     private Node cityC;
+    private TransportationSystem system;
 
     @Before
     public void setUp() {
         cityA = new Node("A");
         cityB = new Node("B");
         cityC = new Node("C");
+        system = new TransportationSystem(graph);
 
         ArrayList<Node> cities = new ArrayList<>();
         cities.add(cityA);
@@ -35,10 +38,17 @@ public class StrategyTest {
 
     @Test
     public void testTrainStrategy() {
-        TransportationSystem system = new TransportationSystem(graph);
+
         TransportationStrategy trainStrategy = new TrainStrategy();
 
         int time = trainStrategy.calculateTime(graph, cityA, cityC, system.getTrainTime());
-        Assert.assertEquals(2, time); //
+        Assert.assertEquals(2, time);
+    }
+
+    @Test
+    public void testBusStrategy() {
+        TransportationStrategy busStrategy = new BusStrategy();
+        int time = busStrategy.calculateTime(graph, cityA, cityC, system.getTrainTime());
+        Assert.assertEquals(3, time);
     }
 }
