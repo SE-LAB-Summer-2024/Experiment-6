@@ -111,6 +111,11 @@ Integer --> <INTEGER_LITERAL>
 
 
 
+![img.png](images/BadSmellEqual.png)
+![img.png](images/BadSmellAndLDNot.png)
+
+![img.png](images/RefactoredGetAddresses.png)
+
 
 ## سوالات 
 
