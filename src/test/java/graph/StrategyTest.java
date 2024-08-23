@@ -51,4 +51,12 @@ public class StrategyTest {
         int time = busStrategy.calculateTime(graph, cityA, cityC, system.getTrainTime());
         Assert.assertEquals(3, time);
     }
+
+    @Test
+    public void testAdjustTrainTime() {
+        system.setTrainTime(3);
+        TransportationStrategy trainStrategy = new TrainStrategy();
+        int time = trainStrategy.calculateTime(graph, cityA, cityC, system.getTrainTime());
+        Assert.assertEquals(6, time);
+    }
 }
