@@ -30,5 +30,17 @@ public class TransportationSystemTest {
         Edge.createEdge(cityB, cityC, false, 2); // Bidirectional edge
     }
 
+    @Test
+    public void testSetOneWay() {
+        TransportationSystem system = new TransportationSystem(graph);
+        system.setOneWay();
+
+        // After setting one-way, the reverse edges should be removed.
+        graph.resetVisits();
+        graph.bfs(cityA);
+        assertEquals(1, cityB.getDistance());
+        assertEquals(-1, cityC.getDistance());
+    }
+
 }
 
