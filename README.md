@@ -73,6 +73,12 @@ Integer --> <INTEGER_LITERAL>
 
 ## فاز دوم
 
+### Facades :
+![img.png](images/Facade1.png)
+
+
+![img.png](images/Facade2.png)
+
 ### strategy :
 
 در مرحله دوم مشاهده کردیم که از TypeAddress به عنوان enum استفاده شده که در کلاس address به عنوان ورودی گرفته می شود و در نهایت با توجه به تایپ آدرس یک خروجی استرینگ داده می شود. 
@@ -100,4 +106,6 @@ Integer --> <INTEGER_LITERAL>
 ![alt text](<images/Screenshot from 2024-08-23 20-08-21.png>)
 
 قرمز بودن Imidiate به خاطر گیتهاب است
+
+![img.png](images/SeparateQueryFromModifier.png)
 
