@@ -23,8 +23,6 @@ public class Graph {
     }
 
     public void bfs(Node s) {
-        this.resetVisits();
-
         Queue<Pair<Node, Integer>> nodes = new LinkedList<>();
         nodes.add(new Pair<Node, Integer>(s, 0));
         while (!nodes.isEmpty()) {
@@ -40,6 +38,11 @@ public class Graph {
                         .collect(Collectors.toCollection(ArrayList::new)));
             }
         }
+    }
+
+    public void bfsWithReset(Node s){
+        this.resetVisits();
+        this.bfs(s);
     }
 
     public void dijkstra(Node s) {

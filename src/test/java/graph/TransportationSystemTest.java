@@ -39,11 +39,9 @@ public class TransportationSystemTest {
         TransportationSystem system = new TransportationSystem(graph);
         system.setState(new OneWayState());
 
-        // After setting one-way, the reverse edges should be removed.
-        graph.resetVisits();
-        graph.bfs(cityA);
+        graph.bfsWithReset(cityA);
         Assert.assertEquals(1, cityB.getDistance());
-        graph.bfs(cityB);
+        graph.bfsWithReset(cityB);
         Assert.assertEquals(0, cityA.getDistance());
     }
 
@@ -53,7 +51,7 @@ public class TransportationSystemTest {
         system.setState(new OneWayState());
         system.setState(new TwoWayState());
 
-        graph.bfs(cityA);
+        graph.bfsWithReset(cityA);
 
         Assert.assertEquals(1, cityB.getDistance());
         Assert.assertEquals(2, cityC.getDistance());
