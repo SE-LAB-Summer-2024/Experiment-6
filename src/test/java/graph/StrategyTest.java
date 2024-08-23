@@ -69,7 +69,7 @@ public class StrategyTest {
         int busTime = busStrategy.calculateTime(system, cityA, cityC);
         int fasterTime = Math.min(trainTime, busTime);
 
-        Assert.assertEquals(fasterTime, trainTime); // Since times are the same in this setup
+        Assert.assertEquals(fasterTime, trainTime);
     }
 
 
