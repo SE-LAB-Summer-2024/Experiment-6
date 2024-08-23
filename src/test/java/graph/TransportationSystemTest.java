@@ -13,7 +13,7 @@ public class TransportationSystemTest {
     private Node cityB;
     private Node cityC;
 
-     @Before
+    @Before
     public void setUp() {
         cityA = new Node("A");
         cityB = new Node("B");
