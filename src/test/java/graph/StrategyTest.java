@@ -1,5 +1,8 @@
 package graph;
 
+import graph.state.TransportationSystem;
+import graph.strategy.TrainStrategy;
+import graph.strategy.TransportationStrategy;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -32,8 +35,10 @@ public class StrategyTest {
 
     @Test
     public void testTrainStrategy() {
+        TransportationSystem system = new TransportationSystem(graph);
         TransportationStrategy trainStrategy = new TrainStrategy();
-        int time = trainStrategy.calculateTime(graph, cityA, cityC);
-        Assert.assertEquals(3, time); // 
+
+        int time = trainStrategy.calculateTime(graph, cityA, cityC, system.getTrainTime());
+        Assert.assertEquals(2, time); //
     }
 }
