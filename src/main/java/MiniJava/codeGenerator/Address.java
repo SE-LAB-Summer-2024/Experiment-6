@@ -17,19 +17,20 @@ public class Address {
 
     public Address(int num, varType varType) {
         this.num = num;
-        this.Type = TypeAddress.Direct;
+        this.Type = new Direct();
         this.varType = varType;
     }
 
     public String toString() {
-        switch (Type) {
-            case Direct:
-                return num + "";
-            case Indirect:
-                return "@" + num;
-            case Imidiate:
-                return "#" + num;
-        }
-        return num + "";
+        return this.Type.toString();
+//        switch (Type) {
+//            case Direct:
+//                return num + "";
+//            case Indirect:
+//                return "@" + num;
+//            case Imidiate:
+//                return "#" + num;
+//        }
+//        return num + "";
     }
 }

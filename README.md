@@ -71,7 +71,15 @@ Integer --> <INTEGER_LITERAL>
   
 در اینجا بدون نیاز به جمله ی شرطی توانسیم زمان موردنیاز برای انتقال را بر اساس نوع استراتژی انتخاب و محاسبه کنیم. در این قسمت فاز اول آزمایش به پایان می رسد.
 
+![img.png](images/SeparateQueryFromModifier.png)
+
 ## فاز دوم
+
+### Facades :
+![img.png](images/Facade1.png)
+
+
+![img.png](images/Facade2.png)
 
 ### strategy :
 
@@ -100,6 +108,7 @@ Integer --> <INTEGER_LITERAL>
 ![alt text](<images/Screenshot from 2024-08-23 20-08-21.png>)
 
 قرمز بودن Imidiate به خاطر گیتهاب است
+
 
 
 
