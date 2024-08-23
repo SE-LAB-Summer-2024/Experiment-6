@@ -56,7 +56,7 @@ public class TransportationSystemTest {
         graph.bfs(cityA);
 
         Assert.assertEquals(1, cityB.getDistance());
-        Assert.assertEquals(2, cityC.getDistance()); //
+        Assert.assertEquals(2, cityC.getDistance());
     }
 
 }
