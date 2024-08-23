@@ -12,7 +12,6 @@ import java.util.ArrayList;
 
 public class StrategyTest {
 
-    private Graph graph;
     private Node cityA;
     private Node cityB;
     private Node cityC;
@@ -23,14 +22,15 @@ public class StrategyTest {
         cityA = new Node("A");
         cityB = new Node("B");
         cityC = new Node("C");
-        system = new TransportationSystem(graph);
 
         ArrayList<Node> cities = new ArrayList<>();
         cities.add(cityA);
         cities.add(cityB);
         cities.add(cityC);
 
-        graph = new Graph(cities);
+        Graph graph = new Graph(cities);
+
+        system = new TransportationSystem(graph);
 
         Edge.createEdge(cityA, cityB, false, 1);
         Edge.createEdge(cityB, cityC, false, 2);
@@ -41,14 +41,14 @@ public class StrategyTest {
 
         TransportationStrategy trainStrategy = new TrainStrategy();
 
-        int time = trainStrategy.calculateTime(graph, cityA, cityC, system.getTrainTime());
+        int time = trainStrategy.calculateTime(system, cityA, cityC);
         Assert.assertEquals(2, time);
     }
 
     @Test
     public void testBusStrategy() {
         TransportationStrategy busStrategy = new BusStrategy();
-        int time = busStrategy.calculateTime(graph, cityA, cityC, system.getTrainTime());
+        int time = busStrategy.calculateTime(system, cityA, cityC);
         Assert.assertEquals(3, time);
     }
 
@@ -56,7 +56,9 @@ public class StrategyTest {
     public void testAdjustTrainTime() {
         system.setTrainTime(3);
         TransportationStrategy trainStrategy = new TrainStrategy();
-        int time = trainStrategy.calculateTime(graph, cityA, cityC, system.getTrainTime());
+        int time = trainStrategy.calculateTime(system, cityA, cityC);
         Assert.assertEquals(6, time);
     }
+
+
 }
