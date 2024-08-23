@@ -71,7 +71,6 @@ Integer --> <INTEGER_LITERAL>
   
 در اینجا بدون نیاز به جمله ی شرطی توانسیم زمان موردنیاز برای انتقال را بر اساس نوع استراتژی انتخاب و محاسبه کنیم. در این قسمت فاز اول آزمایش به پایان می رسد.
 
-![img.png](images/SeparateQueryFromModifier.png)
 
 ## فاز دوم
 
@@ -109,6 +108,7 @@ Integer --> <INTEGER_LITERAL>
 
 قرمز بودن Imidiate به خاطر گیتهاب است
 
+![img.png](images/SeparateQueryFromModifier.png)
 
 #### Extract Repeated Pattern
 ![img.png](images/BadSmellEqual.png)
@@ -119,6 +119,11 @@ Integer --> <INTEGER_LITERAL>
 #### Add Assertion
 
 ![img.png](images/AddAssertion.png)
+
+
+### Add formatter
+
+![img.png](images/AddFormatter.png)
 
 
 ## سوالات 
