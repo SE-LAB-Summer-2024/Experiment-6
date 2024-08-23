@@ -71,13 +71,14 @@ Integer --> <INTEGER_LITERAL>
   
 در اینجا بدون نیاز به جمله ی شرطی توانسیم زمان موردنیاز برای انتقال را بر اساس نوع استراتژی انتخاب و محاسبه کنیم. در این قسمت فاز اول آزمایش به پایان می رسد.
 
-![img.png](images/SeparateQueryFromModifier.png)
 
 ## فاز دوم
 
 ### Facades :
+از آنجایی که فقط از دو تابع CodeGenerator در parser استفاده شده بود پس یک facade برای آن ساختیم:
 ![img.png](images/Facade1.png)
 
+همچنین در SymbolTable نیز تنها از دو تابع Memory استفاده شده پس برای آن نیز facade ساختیم.
 
 ![img.png](images/Facade2.png)
 
@@ -109,16 +110,26 @@ Integer --> <INTEGER_LITERAL>
 
 قرمز بودن Imidiate به خاطر گیتهاب است
 
+### Separate Query From Modifier
+در دو تابع getTemp و getDataAddress این الگو نقض شده است که آن را تصحیح کردیم:
+
+![img.png](images/SeparateQueryFromModifier.png)
 
 #### Extract Repeated Pattern
+این الگو در ۴ جای کد تکرار شده پس آن را استخراج میکنیم و یک تابع برایش میسازیم
 ![img.png](images/BadSmellEqual.png)
 ![img.png](images/BadSmellAndLDNot.png)
-
+تابع استخراج شده:
 ![img.png](images/RefactoredGetAddresses.png)
 
 #### Add Assertion
-
+برای خالی نبودن ss و memory از assertion استفاده میکنیم:
 ![img.png](images/AddAssertion.png)
+
+
+### Add formatter
+
+![img.png](images/AddFormatter.png)
 
 
 ## سوالات 
