@@ -2,6 +2,7 @@ package graph;
 
 import graph.state.OneWayState;
 import graph.state.TransportationSystem;
+import graph.state.TwoWayState;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -44,6 +45,18 @@ public class TransportationSystemTest {
         Assert.assertEquals(1, cityB.getDistance());
         graph.bfs(cityB);
         Assert.assertEquals(0, cityA.getDistance());
+    }
+
+    @Test
+    public void testSetTwoWay() {
+        TransportationSystem system = new TransportationSystem(graph);
+        system.setState(new OneWayState());
+        system.setState(new TwoWayState());
+
+        graph.bfs(cityA);
+
+        Assert.assertEquals(1, cityB.getDistance());
+        Assert.assertEquals(2, cityC.getDistance()); //
     }
 
 }
