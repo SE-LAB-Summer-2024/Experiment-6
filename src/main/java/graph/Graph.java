@@ -63,4 +63,21 @@ public class Graph {
         }
     }
 
+    public void makeAllRoutesOneWay() {
+        for (Node node : this.graph) {
+            for (Edge edge : node.getEdges()) {
+                edge.setDirected(true);
+            }
+        }
+    }
+
+    public void makeAllRoutesTwoWay() {
+        for (Node node : this.graph) {
+            for (Edge edge : node.getEdges()) {
+                edge.setDirected(false); // Set all edges to be undirected
+            }
+        }
+    }
+
+
 }

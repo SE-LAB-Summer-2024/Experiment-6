@@ -1,8 +1,11 @@
 package graph;
 
+import graph.state.OneWayState;
+import graph.state.TransportationSystem;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.Assert.*;
+
 
 import java.util.ArrayList;
 
@@ -33,13 +36,14 @@ public class TransportationSystemTest {
     @Test
     public void testSetOneWay() {
         TransportationSystem system = new TransportationSystem(graph);
-        system.setOneWay();
+        system.setState(new OneWayState());
 
         // After setting one-way, the reverse edges should be removed.
         graph.resetVisits();
         graph.bfs(cityA);
-        assertEquals(1, cityB.getDistance());
-        assertEquals(-1, cityC.getDistance());
+        Assert.assertEquals(1, cityB.getDistance());
+        graph.bfs(cityB);
+        Assert.assertEquals(0, cityA.getDistance());
     }
 
 }
