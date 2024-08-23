@@ -60,5 +60,17 @@ public class StrategyTest {
         Assert.assertEquals(6, time);
     }
 
+    @Test
+    public void testFasterStrategy() {
+        TransportationStrategy trainStrategy = new TrainStrategy();
+        TransportationStrategy busStrategy = new BusStrategy();
+
+        int trainTime = trainStrategy.calculateTime(system, cityA, cityC);
+        int busTime = busStrategy.calculateTime(system, cityA, cityC);
+        int fasterTime = Math.min(trainTime, busTime);
+
+        Assert.assertEquals(fasterTime, trainTime); // Since times are the same in this setup
+    }
+
 
 }
